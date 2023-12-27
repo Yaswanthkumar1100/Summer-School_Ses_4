@@ -1,27 +1,16 @@
 name: Clone and Run Remote Repo
 
 on:
-  push:
-    branches:
-      - main
+  push
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-        with:
-          repository: Yaswanthkumar1100/Summer-School_Ses_4 # Replace with the repository you want to clone
-          ref: main  # Specify the branch or tag to checkout
-
-      # Additional steps can be added here to perform actions after repository checkout
-      # For instance, you can run scripts, build processes, or tests on the checked-out code.
-      # Example:
-      - name: Run Build Script
-        run: |
-          cd repo-name  # Navigate into the cloned repository directory
-          ./build.sh   # Execute a build script specific to the repository
-
-      # Further steps can follow based on your specific workflow requirements
+      -name: LS Output before checkout
+       run: ls
+      -name: Checkout code
+       uses: actions/checkout@v3
+      -name: LS Output after checkout 
+      run: ls
