@@ -1,16 +1,19 @@
 name: Clone and Run Remote Repo
 
 on:
-  push
+  push:
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      -name: LS Output before checkout
-       run: ls
-      -name: Checkout code
-       uses: actions/checkout@v3
-      -name: LS Output after checkout 
-      run: ls
+      - name: LS Output before checkout
+        run: ls
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: LS Output after checkout 
+        run: ls
