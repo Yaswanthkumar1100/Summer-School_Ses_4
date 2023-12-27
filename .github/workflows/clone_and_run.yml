@@ -1,19 +1,15 @@
-name: Clone and Run Remote Repo
-
-on:
-  push:
-    branches: [master]
+name: Demo Workflow
+on: [push] 
 
 jobs:
-  build:
+  demo:
     runs-on: ubuntu-latest
 
     steps:
-      - name: LS Output before checkout
-        run: ls
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: LS Output after checkout 
-        run: ls
+      - name: Run Demo
+        run: |
+          git clone https://github.com/Yaswanthkumar1100/Summer-School_Ses_4.git
+          cd Summer-School_Ses_4
