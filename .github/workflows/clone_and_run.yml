@@ -9,7 +9,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Run Demo
+      - name: Git-actions
         run: |
           git clone https://github.com/Yaswanthkumar1100/Summer-School_Ses_4.git
           cd Summer-School_Ses_4
